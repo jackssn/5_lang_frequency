@@ -13,7 +13,7 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
-    words = [word.strip(string.punctuation) for word in text.split()]
+    words = [word.strip(string.punctuation) for word in text.split() if word.strip(string.punctuation) != '']
     counts = Counter(words)
     return sorted(counts.items(), key=operator.itemgetter(1), reverse=True)[:10]
 
